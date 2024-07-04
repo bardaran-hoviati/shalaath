@@ -1,0 +1,14 @@
+.ButtonWrapper {
+      background-color: transparent;
+      border: 2px solid var(--color-neutrals-n-400);
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--color-neutrals-n-400);
+      transition: border 250ms ease-in-out, color 250ms ease-in-out;
+      &:hover{
+            border: 2px solid var(--color-error);
+            color: var(--color-error);
+
+   
+      }
+}

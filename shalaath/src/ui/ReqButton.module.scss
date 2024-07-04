@@ -1,0 +1,158 @@
+.ButtonWrapper {
+  position: relative;
+  border: 1px solid var(--color-button);
+  background-color: var(--color-button);
+  border-radius: 50px;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 120px;
+  cursor: pointer;
+  &.isPending {
+    pointer-events: none;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  &:hover {
+    background-color: var(--color-button-hover);
+  }
+  &.disable{
+    pointer-events: none;
+    cursor: initial;
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--color-neutrals-n-00);
+      background-color: var(--color-neutrals-n-00);
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+}
+
+.ButtonWrapper1 {
+  position: relative;
+  background-color: var(--color-link);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 120px;
+
+  cursor: pointer;
+  &.isPending {
+    pointer-events: none;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  &:hover {
+    background-color: var(--color-link-hover);
+
+  }
+  &.disable{
+    pointer-events: none;
+    cursor: initial;
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-neutrals-n-00);
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.ResendButtonWrapper {
+  position: relative;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+  text-decoration: underline;
+
+  cursor: pointer;
+  &.isPending {
+    pointer-events: none;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 250ms ease-in-out;
+  &:hover {
+    color: var(--color-link);
+  }
+  &.disable{
+    pointer-events: none;
+    cursor: initial;
+    text-decoration: none;
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-neutrals-n-00);
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+}
+
+.ButtonWrapperHollow {
+  position: relative;
+  border: 1px solid var(--color-neutrals-n-200);
+  background-color: transparent;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  overflow: hidden;
+  color: var(--color-neutrals-n-200);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 120px;
+
+  cursor: pointer;
+  &.isPending {
+    pointer-events: none;
+  }
+  &:hover{
+    background-color: var(--color-neutrals-n-20);
+
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  &.disable{
+    pointer-events: none;
+    cursor: initial;
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-neutrals-n-00);
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+}

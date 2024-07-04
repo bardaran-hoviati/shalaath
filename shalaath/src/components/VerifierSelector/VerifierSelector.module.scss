@@ -1,0 +1,64 @@
+.Page{
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10px;
+}
+
+.ListOuterWrapper{
+      width: 100vw;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      height: auto;
+      padding: 20px;
+      align-self: flex-start;      
+}
+
+.ListWrapper {
+      display: flex;
+      overflow-y: auto;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      max-height: 80vh;  
+      border-radius: 10px; 
+}
+
+.VerifierItem{
+      display: flex;
+      width: 100%;
+      height: auto;
+      padding: 4px;
+      justify-content: space-between;
+      background-color: var(--color-neutrals-n-600);
+      padding: 20px;
+      border-bottom: 1px solid var(--color-neutrals-n-200);
+}
+
+.SubmitButton {
+      position: fixed !important;
+      bottom: 20px;
+      width: 300px !important;
+      left: 50%;
+      transform: translate(-50%, 0);
+}
+.RateWrapper{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+}
+
+.InfoWrapper{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+}
+
+.Checkbox{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+}

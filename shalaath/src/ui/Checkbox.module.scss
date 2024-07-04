@@ -1,0 +1,10 @@
+.CheckBox {
+      background-color: transparent;
+      border: 1px solid var(--color-neutrals-n-00);
+      &.Selected {
+            background-color: rgba(var(--color-neutrals-n-100-rgb), 0.5);
+      }
+      width: 20px;
+      height: 20px;
+      transition: background-color 100ms ease-in-out;
+}
