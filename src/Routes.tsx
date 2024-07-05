@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { VerifierSelector } from "./components/VerifierSelector/VerifierSelector";
+import { VerifierSelector2 } from "./components/VerifierSelector/VerifierSelector2";
 
 type Props = React.HTMLProps<HTMLDivElement>;
 
@@ -9,7 +10,7 @@ export const RoutesFC: React.FC<Props> = (props) => {
     <Router>
       <Routes>
         <Route path="/set-verifiers/*" element={<VerifierSelector />} />
-        <Route path="/matching/select-verifiers/*" element={<VerifierSelector />} />
+        <Route path="/matching/select-verifiers/*" element={<VerifierSelector2 />} />
       </Routes>
       {props.children}
     </Router>

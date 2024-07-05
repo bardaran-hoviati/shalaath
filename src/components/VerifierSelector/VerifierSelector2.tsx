@@ -14,7 +14,7 @@ const project_id = window.location.pathname.split("/")[2]
 export const VerifierSelector2: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(VerifierActions.getVerifiers(project_id))
+    dispatch(VerifierActions.getVerifiers2(project_id))
   }, [])
   return (
     <div className={styles.Page}>

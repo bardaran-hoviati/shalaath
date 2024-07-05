@@ -4,8 +4,6 @@ export const END_POINT = "https://salsa.darkube.app";
 
 export const API_HEADERS = {
   "Content-Type": "application/json",
-  credentials: "include",
-  withCredentials: "true",
 };
 export const API = {
   getVerfiers(postId: string) {
