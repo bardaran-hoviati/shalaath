@@ -1,6 +1,5 @@
 import { PayloadAction, createAction, createSlice } from "@reduxjs/toolkit";
 import { Verifier } from "../../utils/types";
-import { DefaultVerifiers } from "../../utils/text";
 
 type VerifiersSliceType = {
   verifiersList: Verifier[];
@@ -9,7 +8,7 @@ type VerifiersSliceType = {
 };
 
 const initialState: VerifiersSliceType = {
-  verifiersList: DefaultVerifiers,
+  verifiersList: [],
   selectedVerifiers: [],
 };
 
@@ -18,7 +17,7 @@ const VerifiersSlice = createSlice({
   initialState,
   reducers: {
     setVerifiers(state, action: PayloadAction<Verifier[]>) {
-      state.verifiersList.concat(action.payload);
+      state.verifiersList = [...state.verifiersList, ...action.payload]
     },
     selectVerifier(state, action: PayloadAction<Verifier[]>) {
       state.selectedVerifiers = [...state.selectedVerifiers, ...action.payload];

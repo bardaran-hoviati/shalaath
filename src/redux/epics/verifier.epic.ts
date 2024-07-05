@@ -10,15 +10,14 @@ export const fetchVerifiersEpic: Epic = (action$, state$) =>
   action$.pipe(
     ofType(VerifierActions.getVerifiers.type),
     exhaustMap((action) => {
-      return of(VerifierActions.setVerifiers(DefaultVerifiers))
-      /*return API.getVerfiers(
+      return API.getVerfiers(
         action.payload
       ).pipe(
         mergeMap((response) => {
-          return handleSuccess(VerifierActions.setVerifiers(response.response))
+          return handleSuccess(VerifierActions.setVerifiers(response.response.verifiers))
         }),
         handleError("Failed to fetch Verifiers")
-      );*/
+      );
     })
   );
 
