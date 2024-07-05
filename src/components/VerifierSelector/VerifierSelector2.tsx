@@ -10,7 +10,7 @@ import { VerifierActions } from "../../redux/slices/verifiers.slice";
 import { Title } from "../../ui/Title";
 import { Star } from "../../ui/Icons/Star";
 
-const project_id = window.location.pathname.split("/")[2]
+const project_id = window.location.pathname.split("/")[3]
 export const VerifierSelector2: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
