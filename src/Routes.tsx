@@ -8,7 +8,8 @@ export const RoutesFC: React.FC<Props> = (props) => {
   return (
     <Router>
       <Routes>
-        <Route path="/select-verifier" element={<VerifierSelector />} />
+        <Route path="/set-verifiers/*" element={<VerifierSelector />} />
+        <Route path="/matching/select-verifiers/*" element={<VerifierSelector />} />
       </Routes>
       {props.children}
     </Router>

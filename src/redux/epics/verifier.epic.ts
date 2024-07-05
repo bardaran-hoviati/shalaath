@@ -1,5 +1,5 @@
 import { ofType } from "redux-observable";
-import { mergeMap } from "rxjs";
+import { exhaustMap, mergeMap, switchMap } from "rxjs";
 import { API } from "../../api/API";
 import { Epic, handleError, handleSuccess } from "./epic";
 import { VerifierActions } from "../slices/verifiers.slice";
@@ -7,7 +7,7 @@ import { VerifierActions } from "../slices/verifiers.slice";
 export const fetchVerifiersEpic: Epic = (action$, state$) =>
   action$.pipe(
     ofType(VerifierActions.getVerifiers.type),
-    mergeMap((action) => {
+    exhaustMap((action) => {
       return API.getVerfiers(
         action.payload
       ).pipe(
@@ -19,3 +19,22 @@ export const fetchVerifiersEpic: Epic = (action$, state$) =>
     })
   );
 
+
+  export const setVerifiersEpic: Epic = (action$, state$) =>
+    action$.pipe(
+      ofType(VerifierActions.sendVerifiers.type),
+      switchMap((action) => {
+        const verifiers = state$.value.verifiers.selectedVerifiers.map((item) => Number(item.id))
+        return API.setVerifiers(
+          verifiers,
+          action.payload
+        ).pipe(
+          mergeMap(() => {
+            window.location.href = `https://divar.ir/v/${action.payload}`
+            return handleSuccess()
+          }),
+          handleError("Failed to set Verifiers")
+        );
+      })
+    );
+  

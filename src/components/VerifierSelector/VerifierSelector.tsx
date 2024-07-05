@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import styles from "./VerifierSelector.module.scss";
@@ -10,7 +10,12 @@ import { VerifierActions } from "../../redux/slices/verifiers.slice";
 import { Title } from "../../ui/Title";
 import { Star } from "../../ui/Icons/Star";
 
+const project_id = window.location.pathname.split("/")[2]
 export const VerifierSelector: React.FC = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(VerifierActions.getVerifiers(project_id))
+  }, [])
   return (
     <div className={styles.Page}>
       <Title
@@ -20,7 +25,7 @@ export const VerifierSelector: React.FC = () => {
       <div className={styles.ListOuterWrapper}>
         <VerifiersList />
       </div>
-      <ReqButton text={"Submit"} className={styles.SubmitButton} />
+      <ReqButton text={"Submit"} className={styles.SubmitButton} onClick={() => dispatch(VerifierActions.sendVerifiers(project_id))} />
     </div>
   );
 };
