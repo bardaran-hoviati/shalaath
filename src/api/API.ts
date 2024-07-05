@@ -1,6 +1,6 @@
 import { ajax } from "rxjs/ajax";
 import { Verifier } from "../utils/types";
-export const END_POINT = "http://salsa.darkube.app";
+export const END_POINT = "https://salsa.darkube.app";
 
 export const API_HEADERS = {
   "Content-Type": "application/json",

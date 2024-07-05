@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
       proxy: {
         '/api': {
-          target: 'http://salsa.darkube.app',
+          target: 'https://salsa.darkube.app',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
