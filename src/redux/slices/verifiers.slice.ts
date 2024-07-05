@@ -4,6 +4,7 @@ import { Verifier } from "../../utils/types";
 type VerifiersSliceType = {
   verifiersList: Verifier[];
   selectedVerifiers: Verifier[];
+  singleVerifier?: Verifier
 };
 
 const initialState: VerifiersSliceType = {
@@ -26,12 +27,17 @@ const VerifiersSlice = createSlice({
         (item) => action.payload.id != item.id
       );
     },
+    setVerifier(state, action: PayloadAction<Verifier | undefined>) {
+      state.singleVerifier = action.payload
+    },
+
   },
 });
 
 export const VerifierActions = {
   ...VerifiersSlice.actions,
   getVerifiers: createAction<string>("Verifiers/getVerifiers"),
+  getVerifiers2: createAction<string>("Verifiers/getVerifiers"),
   sendVerifiers : createAction<string>("Verifiers/sendVerifiers")
 };
 export const VerifierReducers = VerifiersSlice.reducer;

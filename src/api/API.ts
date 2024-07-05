@@ -13,6 +13,11 @@ export const API = {
       ...API_HEADERS,
     });
   },
+  getVerfiers2(postId: string) {
+    return ajax.get<Verifier[]>(`${END_POINT}/matching/selectVerifiersView/${postId}`, {
+      ...API_HEADERS,
+    });
+  },
   setVerifiers(ids: number[], postId: string){
     return ajax.post(`${END_POINT}/matching/setVerifiers/${postId}`,{
       "selected_verifiers": JSON.stringify(ids),

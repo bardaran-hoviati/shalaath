@@ -20,6 +20,22 @@ export const fetchVerifiersEpic: Epic = (action$, state$) =>
   );
 
 
+  export const fetchVerifiers2Epic: Epic = (action$, state$) =>
+    action$.pipe(
+      ofType(VerifierActions.getVerifiers2.type),
+      exhaustMap((action) => {
+        return API.getVerfiers2(
+          action.payload
+        ).pipe(
+          mergeMap((response) => {
+            return handleSuccess(VerifierActions.setVerifiers(response.response))
+          }),
+          handleError("Failed to fetch Verifiers")
+        );
+      })
+    );
+  
+
   export const setVerifiersEpic: Epic = (action$, state$) =>
     action$.pipe(
       ofType(VerifierActions.sendVerifiers.type),

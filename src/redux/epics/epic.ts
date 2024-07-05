@@ -1,12 +1,12 @@
 import { StateObservable, combineEpics } from "redux-observable";
 
-import { Action, AnyAction } from "redux";
+import { Action } from "redux";
 import { Observable, catchError, merge, of } from "rxjs";
 import { RootState } from "../store";
 import { showFailToastMessage } from "../../main";
 import { RequestState } from "../../utils/types";
 import { ReqActions } from "../slices/req.slice";
-import { fetchVerifiersEpic } from "./verifier.epic";
+import { fetchVerifiers2Epic, fetchVerifiersEpic, setVerifiersEpic } from "./verifier.epic";
 
 export interface Epic<Input extends Action = any, Output extends Action = any> {
   (
@@ -28,4 +28,4 @@ export const handleSuccess = (callback?: any) => {
   );
 };
 
-export const rootEpic = combineEpics(fetchVerifiersEpic);
+export const rootEpic = combineEpics(fetchVerifiersEpic, setVerifiersEpic, fetchVerifiers2Epic);
