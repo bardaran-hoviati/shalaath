@@ -11,7 +11,7 @@ import { Title } from "../../ui/Title";
 import { Star } from "../../ui/Icons/Star";
 
 const project_id = window.location.pathname.split("/")[2]
-export const VerifierSelector: React.FC = () => {
+export const VerifierSelector2: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(VerifierActions.getVerifiers(project_id))

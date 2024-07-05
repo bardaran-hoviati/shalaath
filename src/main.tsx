@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.ts";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
-import strings from "./utils/text.ts";
 import { RoutesFC } from "./Routes.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -26,7 +25,7 @@ export const showSuccessToastMessage = (message : string) => {
   });
 };
 
-export const showFailToastMessage = (message = strings.error) => {
+export const showFailToastMessage = (message: string) => {
   toast.error(message, {
       position: toast.POSITION.BOTTOM_RIGHT,
       draggable : true,

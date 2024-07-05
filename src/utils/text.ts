@@ -1,28 +1,25 @@
-const strings = {
-  palverse: "PlanVerse",
-  more: "more...",
-  confirm: "Confirm",
-  info: `Planverse is a comprehensive project management website that empowers individuals and teams to efficiently organize and collaborate on their projects.     `,
-  cancel: "Cancel",
-  error: "An error has occured",
-  auth: {
-    login: "Login",
-    signup: "Signup",
-    password_lim: "Password should be minimum 8 characters containing Capital and Small letters",
-    otp_info: "An email containing validation code was sent to your email",
-    username_lim: "Username should be minimum 3 characters",
-    loginWelcome: "Welcome Back!",
-    signupWelcome: "Welcome To PlanVerse",
-    signupL: "Dont have an account? Signup.",
-    loginL: "Already have an account? Login.",
-    enterEmail: "Enter your Email",
-    enterPass: "Enter your Password",
-    forgotPass: "Forgot your password?",
-    enterUsername: "Choose a display name",
-  },
-  join: {
-    joinProject: "Join Project",
-  },
-};
+import { Verifier } from "./types";
 
-export default strings;
+export const DefaultVerifiers: Verifier[] = [
+  {
+    id: "3",
+    rate: "4.70",
+    firstname: "محمد",
+    lastname: "حلاج",
+    transactions_participated_count: 12,
+  },
+  {
+    id: "2",
+    rate: "4.95",
+    firstname: "شرکت",
+    lastname: "پارس تنظیم گستران",
+    transactions_participated_count: 3,
+  },
+  {
+    id: "1",
+    rate: "5.00",
+    firstname: "آیدین",
+    lastname: "سلطانی",
+    transactions_participated_count: 3,
+  },
+];
