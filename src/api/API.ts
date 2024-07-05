@@ -9,7 +9,7 @@ export const API_HEADERS = {
 };
 export const API = {
   getVerfiers(postId: string) {
-    return ajax.get<Verifier[]>(`${END_POINT}/matching/getVerifiers/${postId}`, {
+    return ajax.get<Verifier[]>(`${END_POINT}/matching/getVerifiers`, {
       ...API_HEADERS,
     });
   },
